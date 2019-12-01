@@ -3,6 +3,7 @@ from requests import get
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 from datetime import datetime, timedelta
+import pickle
 
 # Constants
 SEARCH_URL = "https://poshmark.com/brand/Naked_&_Famous_Denim-Men-Jeans?sort_by=added_desc"
@@ -79,3 +80,5 @@ for item in recent_items:
     print('Price: ', item[1])
     print('Link: ', item[2])
     print('')
+
+pickle.dump(recent_items, open("naked_and_famous.p", "wb"))
