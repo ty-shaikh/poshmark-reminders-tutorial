@@ -7,6 +7,8 @@ from mailer import generate_markup, send_email
 SEARCH_URL = "https://poshmark.com/brand/Naked_&_Famous_Denim-Men-Jeans?sort_by=added_desc"
 DAYS = 4
 USER_EMAIL = "PERSONAL_ACCOUNT@gmail.com"
+SENDER_EMAIL = "DUMMY_ACCOUNT@gmail.com"
+SENDER_PASSWORD = "DUMMY_ACCOUNT_PASSWORD"
 
 # Scrape product cards
 product_cards = run_search(SEARCH_URL)
@@ -34,4 +36,4 @@ pickle.dump(recent_items, open("naked_and_famous.p", "wb"))
 email_markup = generate_markup("Naked and Famous Jeans", recent_items)
 
 # Send email
-send_email(email_markup, USER_EMAIL)
+send_email(email_markup, USER_EMAIL, SENDER_EMAIL, SENDER_PASSWORD)

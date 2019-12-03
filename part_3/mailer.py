@@ -23,10 +23,10 @@ def generate_markup(title, collection):
 
     return html
 
-def send_email(items, recipient):
+def send_email(items, recipient, sender, sender_password):
     "Send email through dummy Gmail account"
-    sender_email = "DUMMY_ACCOUNT@gmail.com"
-    password = "DUMMY_ACCOUNT_PASSWORD"
+    sender_email = sender
+    password = sender_password
     receiver_email = recipient
 
     message = MIMEMultipart("alternative")
